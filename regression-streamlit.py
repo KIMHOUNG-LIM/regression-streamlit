@@ -12,17 +12,26 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 
 # Load Iris dataset using seaborn
 iris = sns.load_dataset('iris')
+penguin = sns.load_dataset(name="penguins")
+mpg = sns.load_dataset(name='mpg')
 
 
 # Streamlit app
 st.title("Model Deployment")
 
 st.sidebar.subheader("Model Deployment Streamlit")
-# Example tabs for navigation
-tab = st.sidebar.radio(
-    "Iris Dataset",
-     ['Multi Linear Regression', 'Logistic Regression']
-)
+# Buttons for Iris Dataset
+st.sidebar.subheader("Select Data and Model")
+tab = None
+if st.sidebar.button("Multi Linear Regression (Iris)"):
+    tab = "Multi Linear Regression"
+if st.sidebar.button("Logistic Regression (Iris)"):
+    tab = "Logistic Regression1"
+if st.sidebar.button("Multi-class Logistic Regression (Penguin)"):
+    tab = "multi-class logistic regression"
+if st.sidebar.button("Logistic Regression (mpg)"):
+    tab = "Logistic Regression2"
+
 
 # # Sidebar navigation
 # tab = st.sidebar.selectbox('Select a model', ['Multi Linear Regression', 'Logistic Regression'])
@@ -126,7 +135,7 @@ if tab == 'Multi Linear Regression':
     residual_plot(y_test, y_pred)
 
 
-if tab == 'Logistic Regression':
+if tab == 'Logistic Regression1':
     st.header("Logistic Regression")
 
     st.write("Iris Dataset Overview:")
@@ -189,3 +198,15 @@ if tab == 'Logistic Regression':
     ax.set_title('Decision Boundaries for Logistic Regression')
 
     st.pyplot(fig)
+
+if tab == 'multi-class logistic regression':
+
+    st.header("Multi-class Logistic Regression")
+    st.write("Penquin Dataset Overview:")
+    st.write(penguin.head())
+
+if tab == 'Logistic Regression2':
+    st.header("Logistic Regression")
+
+    st.write("Mpg Dataset Overview:")
+    st.write(mpg.head())
