@@ -12,8 +12,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 
 # Load Iris dataset using seaborn
 iris = sns.load_dataset('iris')
-st.write("Dataset Overview:")
-st.write(iris.head())
+
 
 # Streamlit app
 st.title("Model Deployment")
@@ -30,8 +29,10 @@ tab = st.sidebar.radio(
 
 
 if tab == 'Multi Linear Regression':
+
     st.header("Multi Linear Regression")
-    
+    st.write("Iris Dataset Overview:")
+    st.write(iris.head())
     # Encode the 'species' column using LabelEncoder
     encoder = LabelEncoder()
     iris['species'] = encoder.fit_transform(iris['species'])
@@ -127,6 +128,9 @@ if tab == 'Multi Linear Regression':
 
 if tab == 'Logistic Regression':
     st.header("Logistic Regression")
+
+    st.write("Iris Dataset Overview:")
+    st.write(iris.head())
     
     # Prepare input features and binary target
     X = iris[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']].values
