@@ -33,7 +33,7 @@ st.sidebar.subheader("Model Deployment Streamlit")
 
 
 # Sidebar navigation
-tab = st.sidebar.selectbox('Select a model', ['Multi Linear Regression', 'Logistic Regression'])
+tab = st.sidebar.selectbox('Select a model', ['Multi Linear Regression', 'Logistic Regression1'])
 
 
 if tab == 'Multi Linear Regression':
