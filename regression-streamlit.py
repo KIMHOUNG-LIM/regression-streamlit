@@ -21,19 +21,19 @@ st.title("Model Deployment")
 
 st.sidebar.subheader("Model Deployment Streamlit")
 # Buttons for Iris Dataset
-st.sidebar.subheader("Select Data and Model")
-if st.sidebar.button("Multi Linear Regression (Iris)"):
-    tab = "Multi Linear Regression"
-if st.sidebar.button("Logistic Regression (Iris)"):
-    tab = "Logistic Regression1"
-if st.sidebar.button("Multi-class Logistic Regression (Penguin)"):
-    tab = "multi-class logistic regression"
-if st.sidebar.button("Logistic Regression (mpg)"):
-    tab = "Logistic Regression2"
+# st.sidebar.subheader("Select Data and Model")
+# if st.sidebar.button("Multi Linear Regression (Iris)"):
+#     tab = "Multi Linear Regression"
+# if st.sidebar.button("Logistic Regression (Iris)"):
+#     tab = "Logistic Regression1"
+# if st.sidebar.button("Multi-class Logistic Regression (Penguin)"):
+#     tab = "multi-class logistic regression"
+# if st.sidebar.button("Logistic Regression (mpg)"):
+#     tab = "Logistic Regression2"
 
 
 # Sidebar navigation
-# tab = st.sidebar.selectbox('Select a model', ['Multi Linear Regression', 'Logistic Regression'])
+tab = st.sidebar.selectbox('Select a model', ['Multi Linear Regression', 'Logistic Regression'])
 
 
 if tab == 'Multi Linear Regression':
